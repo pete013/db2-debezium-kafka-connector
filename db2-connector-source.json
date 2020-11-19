@@ -1,0 +1,16 @@
+{
+  "name": "db2-connector-source",
+  "config": {
+    "connector.class": "io.debezium.connector.db2.Db2Connector",
+    "database.hostname": "db2",
+    "database.port": "50000",
+    "database.user": "db2inst1",
+    "database.password": "password",
+    "database.server.name": "testdb",
+    "database.dbname": "testdb",
+    "database.cdcschema": "ASNCDC",
+    "table.include.list": "DB2INST1.*",
+    "database.history.kafka.bootstrap.servers": "kafka:29092",
+    "database.history.kafka.topic": "dbhistory.testdb"
+  }
+}

@@ -4,12 +4,19 @@ ARG DB_SCRIPTS_DIR
 FROM ibmcom/db2:${DB2_VERSION}
 
 ENV DB_SCRIPTS_DIR=${DB_SCRIPTS_DIR:-/db2/scripts/}
+ENV ASNCDC_TOOLS_SRC_DIR=/asncdctools/src/
+
+# to make asncdc tools scripts available in docker container
+RUN mkdir -p ${ASNCDC_TOOLS_SRC_DIR}
+COPY data/db2/scripts/asncdc-*/*.* ${ASNCDC_TOOLS_SRC_DIR}
+RUN chmod -R 777 ${ASNCDC_TOOLS_SRC_DIR}
 
 # to make custom db scripts available in docker container
 RUN mkdir -p ${DB_SCRIPTS_DIR}
-COPY data/db2/*.* ${DB_SCRIPTS_DIR}
+COPY data/db2/scripts/user/*.* ${DB_SCRIPTS_DIR}
 
-# to run custom db setup scripts on startup (executed in alphabetically asc order)
+# to run db setup scripts on startup (executed in alphabetically asc order)
 RUN mkdir -p /var/custom \
-  && cp ${DB_SCRIPTS_DIR}/*.sh /var/custom/ \
+  && cp ${ASNCDC_TOOLS_SRC_DIR}cdcsetup.sh /var/custom/000_cdcsetup.sh \
+  && cp ${DB_SCRIPTS_DIR}*.sh /var/custom/ \
   && chmod a+x /var/custom/*.sh
