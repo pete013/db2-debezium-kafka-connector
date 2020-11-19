@@ -1,0 +1,6 @@
+*.jar
+
+temp/
+data/db2/database/*
+
+.DS_Store
