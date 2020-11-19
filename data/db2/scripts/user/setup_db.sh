@@ -1,5 +1,11 @@
 #!/bin/bash
 
+su - db2inst1 -c "
+  db2 connect to $DBNAME;
+  db2 -tvmf /db2/scripts/00_start_cdc.sql;
+  db2 connect reset;
+"
+
 if [ ! -f /db2/scripts/setup.nlk ]; then
 su - db2inst1 -c "
   db2 connect to $DBNAME;
