@@ -1,13 +1,15 @@
 ARG DB2_VERSION=11.5.0.0
-ARG DB_SCRIPTS_DIR=/db2/scripts
+ARG DB_SCRIPTS_DIR
 
 FROM ibmcom/db2:${DB2_VERSION}
+
+ENV DB_SCRIPTS_DIR=${DB_SCRIPTS_DIR:-/db2/scripts/}
 
 # to make custom db scripts available in docker container
 RUN mkdir -p ${DB_SCRIPTS_DIR}
 COPY data/db2/*.* ${DB_SCRIPTS_DIR}
 
-# to run custom db setup scripts on startup (executed in alphabetically asc order
-RUN mkdir -p /var/custom
-COPY ${DB_SCRIPTS_DIR}/*.sh /var/custom
-RUN chmod a+x /var/custom/*.sh
+# to run custom db setup scripts on startup (executed in alphabetically asc order)
+RUN mkdir -p /var/custom \
+  && cp ${DB_SCRIPTS_DIR}/*.sh /var/custom/ \
+  && chmod a+x /var/custom/*.sh

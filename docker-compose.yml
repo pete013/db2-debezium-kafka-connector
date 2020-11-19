@@ -196,7 +196,7 @@ services:
       dockerfile: Dockerfile-db2
       args:
         - DB2_VERSION=11.5.0.0
-        - DB_SCRIPTS_DIR=/db2/scripts
+        - DB_SCRIPTS_DIR=/db2/scripts/
     container_name: db2
     ports:
       - 50000:50000
