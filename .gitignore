@@ -2,5 +2,6 @@
 
 temp/
 data/db2/database/*
+!data/db2/database/.keep
 
 .DS_Store
