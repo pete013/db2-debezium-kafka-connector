@@ -1,2 +1,3 @@
+-- ORDERS
 DROP TABLE IF EXISTS orders;
 CREATE TABLE orders (order_id INTEGER NOT NULL PRIMARY KEY, order_status_code VARCHAR(20), created_on TIMESTAMP NOT NULL WITH DEFAULT, updated_on TIMESTAMP);
