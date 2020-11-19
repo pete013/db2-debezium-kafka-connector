@@ -37,6 +37,7 @@ kafka-topics --zookeeper zookeeper:2181 --list
 ```
 
 Reference links:
-https://github.com/debezium/debezium-incubator/blob/v1.3.1.Final/debezium-connector-db2/src/test/docker/db2-cdc-docker/Dockerfile
-https://medium.com/@naridnevahgar/log-based-cdc-between-db2-mysql-using-debezium-7318e5195565 ~ https://github.com/naridnevahgar/cdc-debezium-db2-mysql/blob/master/dz.txt
-https://debezium.io/documentation/reference/connectors/db2.html
+- https://github.com/debezium/debezium-incubator/blob/v1.3.1.Final/debezium-connector-db2/src/test/docker/db2-cdc-docker/Dockerfile
+- https://medium.com/@naridnevahgar/log-based-cdc-between-db2-mysql-using-debezium-7318e5195565
+  - https://github.com/naridnevahgar/cdc-debezium-db2-mysql/blob/master/dz.txt
+- https://debezium.io/documentation/reference/connectors/db2.html
