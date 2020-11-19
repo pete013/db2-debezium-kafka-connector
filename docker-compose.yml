@@ -118,6 +118,8 @@ services:
         # echo "Installing Connector"
         # confluent-hub install --no-prompt debezium/debezium-connector-mysql:1.2.2
         #
+        # TODO: add wait time until db2 is up
+        #
         echo "Launching Kafka Connect worker"
         /etc/confluent/docker/run &
         #

@@ -24,6 +24,7 @@ curl -i -X POST -H "Accept: application/json" -H "Content-Type: application/json
 curl -i -X GET -H "Accept: application/json" http://localhost:8083/connectors/db2-connector-source
 curl -i -X GET -H "Accept: application/json" http://localhost:8083/connectors/db2-connector-source/status
 curl -i -X DELETE -H "Accept: application/json" http://localhost:8083/connectors/db2-connector-source
+curl -i -X POST -H "Accept: application/json" http://localhost:8083/connectors/db2-connector-source/tasks/0/restart # can be used to restart failed connector task upon delay in db2 startup
 
 # db2 cli shell command
 docker exec -it db2 bash -c "su - db2inst1"
