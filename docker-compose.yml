@@ -78,6 +78,7 @@ services:
       - zookeeper
       - kafka
       - schema-registry
+      - db2
     ports:
       - 8083:8083
     environment:
