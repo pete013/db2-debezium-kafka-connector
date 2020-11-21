@@ -238,7 +238,7 @@ services:
 
   # kafdrop:
   #   image: obsidiandynamics/kafdrop:latest
-  #   container_name: riteaid-kafdrop
+  #   container_name: kafdrop
   #   depends_on:
   #     - kafka
   #   ports:

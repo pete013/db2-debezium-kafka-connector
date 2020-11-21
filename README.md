@@ -50,4 +50,4 @@ CALL ASNCDC.REMOVETABLE('DB2INST1', '#'); --DISABLE_TABLE_CDC
 
 Reference links:
 - https://debezium.io/documentation/reference/connectors/db2.html
-- https://github.com/debezium/debezium-incubator/blob/v1.3.1.Final/debezium-connector-db2/src/test/docker/db2-cdc-docker/
+- https://github.com/debezium/debezium-incubator/blob/v1.3.1.Final/debezium-connector-db2/src/test/docker/db2-cdc-docker
