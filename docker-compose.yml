@@ -235,3 +235,13 @@ services:
       - |
         apk add jq; 
         while [ 1 -eq 1 ];do sleep 60;done
+
+  # kafdrop:
+  #   image: obsidiandynamics/kafdrop:latest
+  #   container_name: riteaid-kafdrop
+  #   depends_on:
+  #     - kafka
+  #   ports:
+  #     - 9000:9000
+  #   environment:
+  #     KAFKA_BROKERCONNECT: kafka:29092
